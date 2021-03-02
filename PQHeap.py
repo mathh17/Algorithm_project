@@ -12,16 +12,22 @@ def extractMin(A):
 def insert(A):
     
     
-    
+   
 def createEmptyPQ():
     
     
     
-    
+# Mathias  
 def parent(i):
     
+# Mathias
+def left(i):
+    
+# Mathias    
+def right(i):
     
     
+# Mathias
 def min_Heapify(A,i):
     
     
