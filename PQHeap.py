@@ -4,16 +4,20 @@ Created on Tue Mar  2 14:58:53 2021
 
 @author: oeste
 """
-
-def extractMin(A):
+# Joachim 
+# Fjerner elementet i A med laveste prioritet og returnerer det
+def extract_min(A):
+    return A.pop()
     
+# Joachim
+# Tilføjer e til A i prioritetskøen med laveste prioritet
+def insert(A, e):
+    A.append(e)
     
-
-def insert(A):
-    
-    
-   
-def createEmptyPQ():
+# Joachim - er det seriøst det de mener? 
+# returnerer en tom prioritetskø 
+def create_emptyPQ():
+    return []
     
     
     
@@ -31,31 +35,43 @@ def right(i):
     
     
 # Mathias
-def min_Heapify(A,i):
+def min_heapify(A,i):
     l = left(i)
     r = right(i)
-    if(l >= A and A[l] < A[i]):
+    if(l >= len(A) and A[l] < A[i]):
         least = l
-    else least = i
-    if r >= A and A[r] < A[least]:
+    else: least = i
+    if r >= len(A) and A[r] < A[least]:
         least = r
     if least != i:
         A[i],A[least] = A[least],A[i]
-        min_Heapify(A,least)
+        min_heapify(A,least)
     
-def heap_MExtract_Min(A):
+def heap_extract_min(A):
+    if len(A) < 1: 
+        print("Error heap underflow")
+        return -1
+    min_e = A[0]
+    A[0] = A[len(A)-1]
+    A.pop()
+    min_heapify(A,0)
+    return min_e
     
-    
-def heap_Min(A):
-    
+def heap_min(A):
+    return A[0]
     
     
 def heap_increase_Key(A,i,key):
+    pass
     
     
     
     
 def min_heap_insert(A,key):
+    pass
     
     
-    
+
+
+
+
