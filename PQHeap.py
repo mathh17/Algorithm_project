@@ -38,10 +38,10 @@ def right(i):
 def min_heapify(A,i):
     l = left(i)
     r = right(i)
-    if(l >= len(A) and A[l] < A[i]):
+    if(l >= (len(A)-1) and A[l] < A[i]):
         least = l
     else: least = i
-    if r >= len(A) and A[r] < A[least]:
+    if r >= (len(A)-1) and A[r] < A[least]:
         least = r
     if least != i:
         A[i],A[least] = A[least],A[i]
