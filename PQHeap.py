@@ -6,19 +6,29 @@ Created on Tue Mar  2 14:58:53 2021
 """
 # Joachim 
 # Fjerner elementet i A med laveste prioritet og returnerer det
-def extract_min(A):
-    return A.pop()
+def extractMin(A):
+    if len(A) < 1: 
+        print("Error heap underflow")
+        return -1
+    min_e = A[0]
+    A[0] = A[len(A)-1]
+    A.pop()
+    min_heapify(A,0)
+    return min_e
     
 # Joachim
 # Tilføjer e til A i prioritetskøen med laveste prioritet
 def insert(A, e):
-    A.append(e)
+    i = len(A)
+    A[i] = e
+    while(i > 0 and A[parent(i) > A[i]]):
+        A[i], A[parent(i)] = A[parent(i)], A[i]
+        i = parent(i)
     
 # Joachim - er det seriøst det de mener? 
 # returnerer en tom prioritetskø 
-def create_emptyPQ():
+def createEmptyPQ():
     return []
-    
     
     
 # Mathias  
@@ -47,15 +57,8 @@ def min_heapify(A,i):
         A[i],A[least] = A[least],A[i]
         min_heapify(A,least)
     
-def heap_extract_min(A):
-    if len(A) < 1: 
-        print("Error heap underflow")
-        return -1
-    min_e = A[0]
-    A[0] = A[len(A)-1]
-    A.pop()
-    min_heapify(A,0)
-    return min_e
+
+    
     
 def heap_min(A):
     return A[0]
@@ -76,11 +79,3 @@ def heap_increase_key(A,i,key):
     return A
     
     
-    
-    
-def min_heap_insert(A,key):
-    i = len(A)
-    A[i] = key
-    while(i > 1 and A[parent(i) > A[i]]):
-        A[i], A[parent(i)] = A[parent(i)], A[i]
-        i = parent(i)
