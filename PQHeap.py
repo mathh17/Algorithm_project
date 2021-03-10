@@ -23,15 +23,15 @@ def create_emptyPQ():
     
 # Mathias  
 def parent(i):
-    int(i/2)
+    int((i-1)/2)
     
 # Mathias
 def left(i):
-    return 2*i
+    return 2*i + 1
     
 # Mathias    
 def right(i):
-    return 2*i+1
+    return 2*i + 2
     
     
 # Mathias
@@ -79,7 +79,11 @@ def heap_increase_key(A,i,key):
     
     
 def min_heap_insert(A,key):
-    pass
+    i = len(A)
+    A[i] = key
+    while(i > 1 and A[parent(i) > A[i]]):
+        A[i], A[parent(i)] = A[parent(i)], A[i]
+        i = parent(i)
     
     
 
