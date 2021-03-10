@@ -60,9 +60,20 @@ def heap_extract_min(A):
 def heap_min(A):
     return A[0]
     
-    
-def heap_increase_Key(A,i,key):
-    pass
+# Andreas - Den returere ikke det helt rigtige
+# indsætter en ny nøgle på en given plads. 
+# derefter genoprettes max-heap orden.  
+  
+def heap_increase_key(A,i,key):
+    if key < A[i]:
+        print('error - new key is smaller then current key')
+    else:
+        A[i] = key
+        
+        while (i > 1 and A[parent(i)] < A[i]):
+            A[i], A[parent(i)] = A[parent(i)], A[i]
+            i = parent(i)
+    return A
     
     
     
@@ -75,3 +86,4 @@ def min_heap_insert(A,key):
 
 
 
+#skid mig i munden 
