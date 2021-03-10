@@ -84,10 +84,3 @@ def min_heap_insert(A,key):
     while(i > 1 and A[parent(i) > A[i]]):
         A[i], A[parent(i)] = A[parent(i)], A[i]
         i = parent(i)
-    
-    
-
-
-
-
-#skid mig i munden 
