@@ -34,19 +34,23 @@ def createEmptyPQ():
     
     
 # Mathias  
+# returnerer forældren
 def parent(i):
     return int((i-1)/2)
     
 # Mathias
+# returner det venstre child
 def left(i):
     return 2*i + 1
     
-# Mathias    
+# Mathias
+# returner det højre child
 def right(i):
     return 2*i + 2
     
     
 # Mathias
+# laver minimums heap i listen
 def min_heapify(A,i):
     l = left(i)
     r = right(i)
