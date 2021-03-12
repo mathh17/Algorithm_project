@@ -2,7 +2,9 @@
 """
 Created on Tue Mar  2 14:58:53 2021
 
-@author: oeste
+@author: Mathias Østergaard Hansen - mathh17
+         Joachim Skovbogaard - Josko20
+         Andreas Klauber - ankla20
 """
 # Joachim 
 # Fjerner elementet i A med laveste prioritet og returnerer det
