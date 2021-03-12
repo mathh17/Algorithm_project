@@ -24,8 +24,6 @@ def insert(A, e):
     while(i > 0 and A[parent(i)] > A[i]):
         A[i], A[parent(i)] = A[parent(i)], A[i]
         i = parent(i)
-        #A.append(parent(i))
-    print(A)
     
 # Joachim - er det seriøst det de mener? 
 # returnerer en tom prioritetskø 
@@ -50,10 +48,10 @@ def right(i):
 def min_heapify(A,i):
     l = left(i)
     r = right(i)
-    if(l >= (len(A)-1) and A[l] < A[i]):
+    if(l <= (len(A)-1) and A[l] < A[i]):
         least = l
     else: least = i
-    if r >= (len(A)-1) and A[r] < A[least]:
+    if r <= (len(A)-1) and A[r] < A[least]:
         least = r
     if least != i:
         A[i],A[least] = A[least],A[i]
