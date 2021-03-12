@@ -20,10 +20,12 @@ def extractMin(A):
 # Tilføjer e til A i prioritetskøen med laveste prioritet
 def insert(A, e):
     i = len(A)
-    A[i] = e
-    while(i > 0 and A[parent(i) > A[i]]):
+    A.append(e)
+    while(i > 0 and A[parent(i)] > A[i]):
         A[i], A[parent(i)] = A[parent(i)], A[i]
         i = parent(i)
+        #A.append(parent(i))
+    print(A)
     
 # Joachim - er det seriøst det de mener? 
 # returnerer en tom prioritetskø 
@@ -33,7 +35,7 @@ def createEmptyPQ():
     
 # Mathias  
 def parent(i):
-    int((i-1)/2)
+    return int((i-1)/2)
     
 # Mathias
 def left(i):
